@@ -10,11 +10,24 @@ info:
 servers:
   - url: 'https://api.openweathermap.org/data/2.5'
     description: prod
-paths: {}
+paths:
+  /weather:
+    get:
+      summary: Weather
+      tags: []
+      responses: {}
+      operationId: get-weather
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: param
+        - $ref: '#/components/parameters/lon'
 components:
-  schemas: {}
-  securitySchemes:
-    app_id:
-      name: appid
-      type: apiKey
+  parameters:
+    lon:
+      name: lon
       in: query
+      description: sqssq
+      schema:
+        type: string
